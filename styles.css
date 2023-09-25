@@ -1,0 +1,107 @@
+:root {
+  --fairy-tale: #F1C8DB;
+  --puce: #B88C9E;
+  --eggplant: #704C5E;
+  --cadet-gray: #88A09E;
+  --viridian: #558B6E;
+  --black: #000000;
+  --white: #FFFFFF;
+  --fb-blue: #3b5998;
+  --twitter-blue: #1DA1F2;
+  --error-red: #FF0000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Roboto Slab', serif;
+  width: 100vw;
+  height: 100vh;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 5rem 20rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.side-column {
+  width: 400px;
+  height: 600px;
+  background-size: cover;
+  background-position: 50%;
+  background-image: url(./assets/images/blueberries.jpg);
+  color: var(--white);
+  padding: 2rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 72px;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-size: 42px
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+#socials {
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  margin-top: .5rem;
+  padding: 14px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*button:focus {*/
+/*  background-color: var(--off-black);*/
+/*}*/
+
+.icon {
+  color: var(--white);
+  text-align: center;
+  padding: .25rem;
+}
+
+.facebook-btn {
+  background-color: var(--fb-blue);
+}
+
+.twitter-btn {
+  background-color: var(--twitter-blue);
+}
+
+.main {
+  padding: 2rem;
+}
+
+.error-icon {
+  visibility: hidden;
+  color: var(--error-red);
+}
+
+/*https://loremipsum.io/generator/*/
+
+
