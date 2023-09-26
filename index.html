@@ -54,6 +54,7 @@
                     type="text"
                     id="firstName"
                     required
+                    minlength="4"
                 >
                 <div class="error-container">
                     <span class="error-icon hidden">
@@ -69,6 +70,7 @@
                 <input
                     type="email"
                     id="email"
+                    pattern="^(.+)@(.+).(.+)$"
                     required
                 >
                 <div class="error-container">

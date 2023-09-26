@@ -4,11 +4,36 @@ const validateForm = formSelector => {
 	// we will create validation rules that the group can loop through to see if ever ything validates
 	const validationOptions = [
 		{
+			attribute: 'minlength',
+			isValid: input =>
+				input.value &&
+				input.value.length >= parseInt(input.minLength, 10),
+			errorMessage: (input, label) =>
+				`${ label.textContent } needs to be at least ${input.minLength} characters`
+		},
+		// doesn't work, not sure why, will explore later
+		// {
+		// 	attribute: 'custommaxlength',
+		// 	isValid: input =>
+		// 		input.value &&
+		// 		input.value.length <= parseInt(input.getAttribute('custommaxlength'), 10),
+		// 	errorMessage: (input, label) =>
+		// 		`${ label.textContent } needs to be less than ${input.getAttribute('custommaxlength')} characters`
+		// },
+		{
+			attribute: 'pattern',
+			isValid: input => {
+				const patternRegex = new RegExp(input.pattern);
+				return patternRegex.test(input.value);
+			},
+			errorMessage: (input, label) => `Not a valid ${label.textContent}`
+		},
+		{
 			attribute: 'required',
 			isValid: input => input.value.trim() !== '',
 			errorMessage: (input, label) => `${label.textContent} is required`
 
-		}
+		},
 	];
 
 	const validateSingleFormGroup = formGroup => {
