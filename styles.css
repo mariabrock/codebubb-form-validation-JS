@@ -28,10 +28,10 @@ html, body {
 }
 
 .container {
-  margin: 5rem 20rem;
-  display: flex;
-  flex-direction: row;
-}
+   margin: 5rem 20rem;
+   display: flex;
+   flex-direction: row;
+ }
 
 .side-column {
   width: 600px;
@@ -130,9 +130,19 @@ input:focus {
   outline: 2px solid var(--fairy-tale);
 }
 
-.error-icon {
+.hidden {
   visibility: hidden;
+}
+
+.error-container {
+  margin-top: .5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.error-icon {
   color: var(--error-red);
+  margin-right: .54rem;
 }
 
 .submit-btn {
@@ -146,5 +156,9 @@ input:focus {
 
 .error {
   color: var(--error-red);
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
+}
+
+.error-input {
+  outline: 2px solid var(--error-red);
 }

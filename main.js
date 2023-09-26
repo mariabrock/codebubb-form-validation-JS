@@ -22,12 +22,16 @@ const validateForm = formSelector => {
 		for(const option of validationOptions) {
 			if(input.hasAttribute(option.attribute) && !option.isValid(input)) {
 				errorContainer.textContent = option.errorMessage(input, label);
+				input.classList.add('error-input');
+				errorIcon.classList.remove('hidden');
 				formGroupError = true;
 			}
 		}
 		// another statement to set error containers to nothing
 		if(!formGroupError) {
 			errorContainer.textContent = '';
+			input.classList.remove('error-input');
+			errorIcon.classList.add('hidden');
 		}
 	};
 
