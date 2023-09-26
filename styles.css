@@ -9,6 +9,7 @@
   --fb-blue: #3b5998;
   --twitter-blue: #1DA1F2;
   --error-red: #FF0000;
+  --smokey-grey: hsl(0, 1%, 44%);
 }
 
 * {
@@ -33,11 +34,11 @@ html, body {
 }
 
 .side-column {
-  width: 400px;
-  height: 600px;
+  width: 600px;
+  height: 750px;
   background-size: cover;
   background-position: 50%;
-  background-image: url(./assets/images/blueberries.jpg);
+  background-image: url(./assets/images/beets.jpg);
   color: var(--white);
   padding: 2rem;
 }
@@ -75,10 +76,6 @@ button {
   cursor: pointer;
 }
 
-/*button:focus {*/
-/*  background-color: var(--off-black);*/
-/*}*/
-
 .icon {
   color: var(--white);
   text-align: center;
@@ -89,17 +86,62 @@ button {
   background-color: var(--fb-blue);
 }
 
+.facebook-btn:focus {
+  background-color: var(--smokey-grey);
+}
+
 .twitter-btn {
   background-color: var(--twitter-blue);
 }
 
+.twitter-btn:focus {
+  background-color: var(--smokey-grey);
+}
+
 .main {
   padding: 2rem;
+  width: 600px;
+  height: 750px;
+}
+
+.login-link {
+  color: var(--viridian);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  padding-bottom: .5rem;
+}
+
+input {
+  padding: 1rem;
+  margin: 0;
+  background-color: transparent;
+  border: 2px solid var(--eggplant);
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: 2px solid var(--fairy-tale);
 }
 
 .error-icon {
   visibility: hidden;
   color: var(--error-red);
+}
+
+.submit-btn {
+  background-color: var(--viridian);
+  width: 250px;
+}
+
+.submit-btn:focus {
+  background-color: var(--cadet-gray);
 }
 
 /*https://loremipsum.io/generator/*/
