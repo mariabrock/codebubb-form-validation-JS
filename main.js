@@ -119,7 +119,10 @@ const validateForm = (formSelector, callback) => {
 
 	const sendToAPI = formElement => {
 		const formObject = Array.from(formElement.elements)
+			// filter out what we don't want from the object
 			.filter(element => element.type !== 'submit')
+			// take array and merge to an object
+			//reduce will return us a key:value pair of id: value
 			.reduce((accumulator, element) => ({
 				...accumulator, [element.id]: element.value
 			}), {});
