@@ -20,11 +20,13 @@
 
 html, body {
   font-family: 'Roboto Slab', serif;
+  background-color: var(--fairy-tale);
   width: 100vw;
   height: 100vh;
   font-size: 15px;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .container {
@@ -33,14 +35,25 @@ html, body {
    flex-direction: row;
  }
 
+img {
+  width: 600px;
+  height: 750px;
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+}
+
 .side-column {
   width: 600px;
   height: 750px;
-  background-size: cover;
-  background-position: 50%;
-  background-image: url(./assets/images/beets.jpg);
   color: var(--white);
-  padding: 2rem;
+}
+
+.welcome-text {
+  width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-90%, -90%);
 }
 
 h1 {
@@ -52,7 +65,8 @@ h1 {
 h2 {
   margin-bottom: 2rem;
   font-weight: bold;
-  font-size: 42px
+  font-size: 42px;
+  padding: 1rem;
 }
 
 p {
@@ -65,7 +79,7 @@ p {
 
 button {
   border: none;
-  margin-top: .5rem;
+  margin: .5rem;
   padding: 14px 20px;
   text-align: center;
   text-decoration: none;
@@ -99,9 +113,10 @@ button {
 }
 
 .main {
-  padding: 2rem;
   width: 600px;
   height: 750px;
+  padding: 2rem;
+  background-color: var(--white);
 }
 
 .login-link {
@@ -111,6 +126,7 @@ button {
 .form-group {
   display: flex;
   flex-direction: column;
+  padding: 0 2rem;
 }
 
 label {
@@ -148,6 +164,7 @@ input:focus {
 .submit-btn {
   background-color: var(--viridian);
   width: 250px;
+  margin: .5rem 2rem;
 }
 
 .submit-btn:focus {
