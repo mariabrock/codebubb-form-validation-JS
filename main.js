@@ -1,4 +1,6 @@
-const validateForm = (formSelector, callback) => {
+const validateForm = (formSelector) => {
+	return new Promise((resolve, reject) => {
+
 	const formElement = document.querySelector(formSelector);
 
 	// we will create validation rules that the group can loop through to see if ever ything validates
@@ -112,10 +114,11 @@ const validateForm = (formSelector, callback) => {
 			event.preventDefault();
 		} else {
 			console.log('Form is valid');
-			callback(formElement);
+			resolve(formElement);
 		}
 	});
-}
+	});
+};
 
 	const sendToAPI = formElement => {
 		const formObject = Array.from(formElement.elements)
@@ -130,4 +133,8 @@ const validateForm = (formSelector, callback) => {
 		// submit to and API via Ajax or other
 	}
 
-validateForm('#registrationForm', sendToAPI);
+validateForm('#registrationForm')
+	.then(formElement => {
+		console.log('Promise resolved');
+		sendToAPI(formElement);
+	})
