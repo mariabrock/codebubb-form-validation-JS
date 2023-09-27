@@ -21,6 +21,22 @@ const validateForm = formSelector => {
 		// 		`${ label.textContent } needs to be less than ${input.getAttribute('custommaxlength')} characters`
 		// },
 		{
+			attribute: 'match',
+			isValid: input => {
+				const matchSelector = input.getAttribute('match');
+				const matchedElement = formElement.querySelector(`#${matchSelector}`);
+				return matchedElement && matchedElement.value.trim() === input.value.trim();
+			},
+			errorMessage: (input, label) => {
+				// reminder: check how many parent elements there are when trying to grab elements!
+				const matchSelector = input.getAttribute('match');
+				const matchedElement = formElement.querySelector(`#${matchSelector}`);
+				const matchedLabel =
+					matchedElement.parentElement.querySelector('label');
+ 				return `${label.textContent} should match ${matchedLabel.textContent}`;
+			}
+		},
+		{
 			attribute: 'pattern',
 			isValid: input => {
 				const patternRegex = new RegExp(input.pattern);
@@ -62,6 +78,16 @@ const validateForm = formSelector => {
 
 // novalidate removes all html validation so that we can start with a clean slate
 	formElement.setAttribute('novalidate', '');
+
+	// in order to listen for validation while user is filling in the form, we'll write a function to listen on 'blur'
+	// which is a function triggered each time the user moves to a new form element
+	// loop through each input, listen for blur/keydown/update grab event object, and validate
+	Array.from(formElement.elements).forEach(element => {
+		element.addEventListener('blur', event => {
+			validateSingleFormGroup(event.target.parentElement);
+		})
+	});
+
 // add an event listener so we can prevent automatic submission
 // 	trigger the validation
 	formElement.addEventListener('submit', (event) => {
