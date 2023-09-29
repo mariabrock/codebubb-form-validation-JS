@@ -107,16 +107,16 @@ const validateForm = (formSelector) => {
 	// add an event listener to we can prevent automatic submission
 	// 	trigger the validation
 	formElement.addEventListener('submit', (event) => {
-		console.log('test');
-		const formValid = validateAllFormGroups(formElement);
+			console.log('test');
+			const formValid = validateAllFormGroups(formElement);
 
-		if(!formValid) {
-			event.preventDefault();
-		} else {
-			console.log('Form is valid');
-			resolve(formElement);
-		}
-	});
+			if(!formValid) {
+				event.preventDefault();
+			} else {
+				console.log('Form is valid');
+				resolve(formElement);
+			}
+		});
 	});
 };
 
