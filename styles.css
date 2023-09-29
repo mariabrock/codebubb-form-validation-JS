@@ -26,14 +26,13 @@ html, body {
   font-size: 15px;
   margin: 0;
   padding: 0;
-
+  overflow: hidden;
 }
 
 .container {
    margin: 5rem 20rem;
    display: flex;
    flex-direction: row;
-  overflow: hidden;
  }
 
 img {
@@ -183,12 +182,14 @@ input:focus {
 }
 
 @media only screen and (max-width: 600px) {
+  html, body {
+    overflow-y: scroll;
+  }
 
   .container {
     margin: 0;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
   }
 
   img {
@@ -209,10 +210,11 @@ input:focus {
   }
 
   .welcome-text {
+    position: inherit;
     width: 300px;
     top: 50%;
     left: 50%;
-    transform: translate(-55%, -120%);
+    transform: translate(10%, -120%);
   }
 
   .form-group {;
