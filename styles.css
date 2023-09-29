@@ -26,13 +26,14 @@ html, body {
   font-size: 15px;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+
 }
 
 .container {
    margin: 5rem 20rem;
    display: flex;
    flex-direction: row;
+  overflow: hidden;
  }
 
 img {
@@ -50,7 +51,7 @@ img {
 
 .welcome-text {
   width: 500px;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-90%, -90%);
@@ -70,7 +71,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 #socials {
@@ -88,6 +89,7 @@ button {
   color: var(--white);
   font-size: 16px;
   cursor: pointer;
+  filter: drop-shadow(1px 1px 0.25rem var(--black));
 }
 
 .icon {
@@ -178,4 +180,46 @@ input:focus {
 
 .error-input {
   outline: 2px solid var(--error-red);
+}
+
+@media only screen and (max-width: 600px) {
+
+  .container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  img {
+    width: 400px;
+    height: 400px;
+    margin: .5rem;
+  }
+
+  .side-column {
+    width: 400px;
+    height: 420px;
+  }
+
+  .main {
+    width: 420px;
+    height: 750px;
+    padding: 0 1rem;
+  }
+
+  .welcome-text {
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%, -120%);
+  }
+
+  .form-group {;
+    padding: 0 1rem;
+  }
+
+  .submit-btn {
+    margin: .5rem 1rem;
+  }
 }
