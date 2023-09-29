@@ -1,26 +1,26 @@
-# CodeBubb Javascripot Form Validation
+# CodeBubb Javascript Form Validation
 
 This is a practice of Javascript form validation.
 
 ## Table of contents
 
 - [Overview](#overview)
-    - [The goal](#the-goal)
+    - [The Goal](#the-goal)
     - [Screenshots](#screenshots)
 - [My process](#my-process)
     - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
+    - [Code I'm Proud of](#code-im-proud-of)
     - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
 
-### The goal
+### The Goal
 
 Users should be able to:
 
 - Add their information to each input
-- See an error message when their input does not validate
+- See an error message when their input does meet validation requirements
 - See form validation messages if:
     - The field is left empty
     - The input does not meet preset standards
@@ -45,10 +45,9 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 
-### What I learned
+### Code I'm Proud of
 
 ```html
   <div class="form-group">
@@ -93,8 +92,10 @@ Users should be able to:
 
 ### Useful resources
 
-- []() - 
-- []() - 
+- [Lorem Ipsum Generator](https://loremipsum.io/generator/) - Your basic Lorem generator, nothing fancy.
+- [](https://www.youtube.com/watch?v=iyngFd6f8ko&t=1253s) - The Codebubb Video - Validation
+- [](https://www.youtube.com/watch?v=vrFnwDJmvBk&list=PLpc_YvcwbxaTAg0cGvqcDVmALsipqtJDY&index=17) - The Codebubb Video - Submission
+- [](https://github.com/codebubb/javascript-form-validation-tutorial) - Codebubb Github
 
 ## Author
 
